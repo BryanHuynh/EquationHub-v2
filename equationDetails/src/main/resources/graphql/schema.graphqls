@@ -1,0 +1,13 @@
+type Query {
+    equationById( id: ID ): Equation
+    equationsByUserId( id: ID): [Equation]
+}
+
+
+type Equation {
+    id: ID
+    name: String
+    description: String
+    equation: String
+    variables: String
+}

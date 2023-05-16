@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "Equation_hub_server/server/src",
+        "Equation_hub_server/bookDetails/src/main/java/com/graphqljava/tutorial/bookDetails"
+    ]
+}
