@@ -6,6 +6,7 @@ import Home from "@/layout/home";
 import { useEffect } from "react";
 import { Equation } from '@/graphql/models/Equation';
 
+
 export default function Dashboard() {
     const {data, loading} = useQuery(EQUATIONS_BY_USER_ID, {
 		variables: {
@@ -15,12 +16,12 @@ export default function Dashboard() {
 
 
     return (
-        <div className="flex flex-col p-5 border h-full">
+        <div className="flex flex-col p-5 border">
             {/* Header */}
-            <div className="flex justify-between w-full">
-                <div className="flex flex-row gap-x-2 w-full">
+            <div className="flex justify-between">
+                <div className="flex flex-row gap-x-2">
                     <input
-                        className="rounded-md border border-gray-300 p-1 w-full"
+                        className="rounded-md border border-gray-300 p-1"
                         type="text"
                         autoComplete="off"
                         placeholder="Search"
@@ -29,7 +30,7 @@ export default function Dashboard() {
             </div>
 
             {/* Body */}
-            <div className="grid grid-cols-4 gap-4 flex-wrap mt-5 w-full">
+            <div className="grid grid-cols-4 gap-4 flex-wrap mt-5">
                 {data?.equationsByUserId.map((equation: Equation) => (
                     <EquationsCard
                         key={equation.id}

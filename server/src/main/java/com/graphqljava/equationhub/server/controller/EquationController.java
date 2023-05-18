@@ -1,6 +1,6 @@
-package com.graphqljava.equationhub.equationDetails.controller;
+package com.graphqljava.equationhub.server.controller;
 
-import com.graphqljava.equationhub.equationDetails.model.Equation;
+import com.graphqljava.equationhub.server.model.Equation;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;

@@ -2,6 +2,9 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 import CardDropdownMenu from "@/components/CardDropdownMenu";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import "katex/dist/katex.min.css";
+import { BlockMath } from "react-katex";
+
 
 export interface EquationsCardProps {
     id: string;
@@ -16,13 +19,12 @@ export const EquationsCard = ({ id, name, equation }: EquationsCardProps) => {
             {/* Header image */}
 
             <Link href={`/equation/${id}`}>
-                <div className="h-3/4 bg-gray-300 justify-center align-middle">
-                    <p className="text-2xl text-center align-middle">
-                        {equation}
-                    </p>
+                <div className="h-3/4 bg-gray-300 pt-11">
+                    <BlockMath math={equation} /> 
+
                 </div>
                 {/* Body */}
-                <div className="h-1/4 w-full flex flex-row justify-between items-center p-2">
+                <div className="w-full flex flex-row pl-5 place-content-between px-2">
                     <p className="text-lg">{name}</p>
                     <CardDropdownMenu />
                 </div>

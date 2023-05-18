@@ -1,6 +1,9 @@
 import "@/styles/globals.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import type { AppProps } from "next/app";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 type ComponentWithPageLayout = AppProps & {
     Component: AppProps["Component"] & {
@@ -16,16 +19,18 @@ export default function App({ Component, pageProps }: ComponentWithPageLayout) {
 
     return (
         <>
-            <ApolloProvider client={client}>
-                {Component.PageLayout ? (
-                    //@ts-ignore
-                    <Component.PageLayout>
+            <div className={`${inter.className}`}>
+                <ApolloProvider client={client}>
+                    {Component.PageLayout ? (
+                        //@ts-ignore
+                        <Component.PageLayout>
+                            <Component {...pageProps} />
+                        </Component.PageLayout>
+                    ) : (
                         <Component {...pageProps} />
-                    </Component.PageLayout>
-                ) : (
-                    <Component {...pageProps} />
-                )}
-            </ApolloProvider>
+                    )}
+                </ApolloProvider>
+            </div>
         </>
     );
 }

@@ -1,4 +1,4 @@
-package com.graphqljava.equationhub.equationDetails;
+package com.graphqljava.equationhub.server;
 
 import org.apache.catalina.filters.CorsFilter;
 import org.springframework.beans.factory.annotation.Configurable;

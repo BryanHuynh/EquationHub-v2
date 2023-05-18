@@ -6,37 +6,14 @@ import { ILoadPyodide, initalizePyodide } from "@/utils/pyodideLoader";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [pyodide, setPyodide] = useState<any>();
-  const [pyodideLoading, setPyodideLoading] = useState(true);
-  const [pyodideReady, setPyodideReady] = useState(false);
+  // const [pyodide, setPyodide] = useState<any>();
+  // const [pyodideLoading, setPyodideLoading] = useState(true);
+  // const [pyodideReady, setPyodideReady] = useState(false);
 
-  useEffect(() => {
-    if (!pyodideReady) {
-      initalizePyodide({ setPyodide, setPyodideReady });
-    }
-    if (pyodideReady) {
-      solve();
-    }
-  }, [pyodideReady, pyodide]);
+  // useEffect(() => {
 
-  const solve = async () => {
-    if(!pyodideReady) return;
-    await pyodide.runPythonAsync(
-      `
-from sympy import *
-x, y = symbols('x y')
-gfg_exp = x - 6
-intr = solve(gfg_exp, x)
-result = intr[0]
-result
-
-      `
-    ).then((output: any) => {
-      console.log(output);
-
-    })
     
-  }
+  // }
 
 
   return (

@@ -1,4 +1,4 @@
-package com.graphqljava.equationhub.equationDetails.model;
+package com.graphqljava.equationhub.server.model;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,9 +21,9 @@ public class Equation {
     }
 
     private static List<Equation> equations = Arrays.asList(
-            new Equation("1", "1", "Pythagorean Theorem", "a^2 + b^2 = c^2", "a^2 + b^2 = c^2", "[a, b, c]"),
-            new Equation("2", "1"," Quadratic Formula", "ax^2 + bx + c = 0", "x = (-b +- sqrt(b^2 - 4ac)) / 2a", "[a, b, c]"),
-            new Equation("3", "1", "Slope", "y = mx + b", "m = (y2 - y1) / (x2 - x1)", "[m, x1, x2, y1, y2]")
+            new Equation("1", "1", "Pythagorean Theorem", "a^2 + b^2 = c^2", "a^2 + b^2 = c^2", "[a,b,c]"),
+            new Equation("2", "1"," Quadratic Formula", "ax^2 + bx + c = 0", "x = (-b +- \\frac{\\sqrt{b^2 - 4a*c}}{2a})", "[x,a,b,c]"),
+            new Equation("3", "1", "Slope", "y = mx + b", "m = \\frac{(y_2 - y_1)}{(x_2 - x_1)}", "[m,x_{1},x_{2},y_{1},y_{2}]")
     );
 
     public static Equation getById( String id ) {

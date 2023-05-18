@@ -9,6 +9,7 @@ import { Equation } from "@/graphql/models/Equation";
 import { EQUATION_BY_ID } from "@/graphql/Queries";
 import { useQuery } from "@apollo/client";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 const EquationContext = createContext<Equation | null>(null);
@@ -35,7 +36,7 @@ export function EquationLayout({ children }: { children: React.ReactNode }) {
     const { query } = useRouter();
     const equationID = query.id as string;
     const [equation, setEquation] = useState<Equation>();
-    const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
+    const [status, setStatus] = useState<"loading" | "success" | "error">("success");
 
     const { data, loading } = useQuery(EQUATION_BY_ID, {
         variables: {
@@ -54,13 +55,13 @@ export function EquationLayout({ children }: { children: React.ReactNode }) {
 
 
     const [pyodide, setPyodide] = useState<any>();
-    const [pyodideReady, setPyodideReady] = useState(false);
+    const [pyodideReady, setPyodideReady] = useState(true);
 
-    useEffect(() => {
-        if (!pyodideReady) {
-            initalizePyodide({ setPyodide, setPyodideReady });
-        }
-    }, [pyodideReady, pyodide]);
+    // useEffect(() => {
+    //     if (!pyodideReady) {
+    //         initalizePyodide({ setPyodide, setPyodideReady });
+    //     }
+    // }, [pyodideReady, pyodide]);
 
     return (
         <Home>

@@ -9,14 +9,12 @@ function classNames(...classes: string[]) {
 export default function CardDropdownMenu() {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2">
+        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5">
           <EllipsisVerticalIcon
             className="h-5 w-5 text-gray-400"
             aria-hidden="true"
           />
         </Menu.Button>
-      </div>
 
       <Transition
         as={Fragment}
